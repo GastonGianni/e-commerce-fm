@@ -1,2 +1,2 @@
-# e-commerce-fm
-Desafío frontendMentor e-commerce
+# E_COMMERCE_FM
+Desafío frontend mentor. Sitio web E-Commerce.

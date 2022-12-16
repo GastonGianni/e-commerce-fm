@@ -1,7 +1,7 @@
 import React from "react";
-import MinusIcon from "../icons/MinusIcon";
-import PlusIcon from "../icons/PlusIcon";
-import CartIcon from "../icons/CartIcon";
+import MinusIcon from "../../icons/MinusIcon";
+import PlusIcon from "../../icons/PlusIcon";
+import CartIcon from "../../icons/CartIcon";
 import { useState } from "react";
 
 const DescriptionProduct = () => {
@@ -16,7 +16,7 @@ const DescriptionProduct = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 md:max-w-[520px] md:p-0">
+    <section className="container mx-auto px-4 md:max-w-[520px] md:p-0 lg:m-0 ">
       <p className="mb-2 font-bold uppercase text-orange-personal">Sneaker Company</p>
       <h1 className="mb-4 text-3xl font-bold">Fall Limited Edition Sneakers</h1>
       <p className="mb-6 tracking-wide text-dark-grayish">

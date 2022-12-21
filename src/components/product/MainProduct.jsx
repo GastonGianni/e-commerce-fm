@@ -12,7 +12,12 @@ import imgProdSmall_3 from "@/assets/images/image-product-3-thumbnail.jpg";
 import imgProdSmall_4 from "@/assets/images/image-product-4-thumbnail.jpg";
 
 const IMG_ARRAY = [imgProd1, imgProd2, imgProd3, imgProd4];
-const IMG_SMALL_ARRAY = [imgProdSmall_1, imgProdSmall_2, imgProdSmall_3, imgProdSmall_4];
+const IMG_SMALL_ARRAY = [
+  { url: imgProdSmall_1, id: 0 },
+  { url: imgProdSmall_2, id: 1 },
+  { url: imgProdSmall_3, id: 2 },
+  { url: imgProdSmall_4, id: 3 },
+];
 
 const MainProduct = () => {
   return (

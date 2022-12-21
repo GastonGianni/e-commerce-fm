@@ -43,7 +43,7 @@ const DescriptionProduct = () => {
           </button>
         </div>
         <div className="mb-3 lg:w-full">
-          <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-personal py-4 text-white shadow-lg transition-all hover:bg-orange-400 ">
+          <button className="flex w-full items-start justify-center gap-2 rounded-lg bg-orange-personal py-4 text-white shadow-lg transition-all hover:bg-orange-400 ">
             <CartIcon fill="#fff" />
             <span>Add to cart</span>
           </button>

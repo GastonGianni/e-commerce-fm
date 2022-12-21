@@ -21,13 +21,12 @@ const ImagesProduct = ({ IMG_ARRAY = [], IMG_SMALL_ARRAY = [], ...props }) => {
 
       {IMG_SMALL_ARRAY.map((smallImg) => (
         <img
-          key={smallImg}
-          id="0"
+          key={smallImg.id}
+          id={smallImg.id}
           onClick={props.changeImg}
-          src={smallImg}
+          src={smallImg.url}
           alt=""
-          className="hidden rounded-lg transition-all duration-75
-        hover:border-4 hover:border-orange-personal md:block"
+          className="hidden rounded-lg transition-all duration-300 hover:scale-105 md:block"
         />
       ))}
     </section>

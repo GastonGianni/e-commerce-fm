@@ -4,13 +4,9 @@ import { useState } from "react";
 export default ({ IMG_ARRAY, IMG_SMALL_ARRAY }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  const handleOpenModal = () => window.innerWidth > 768 && setIsModalOpen(true);
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleCloseModal = () => setIsModalOpen(false);
 
   return (
     <>

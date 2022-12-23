@@ -1,5 +1,5 @@
-import DescriptionProduct from "@/components/product/col-description/DescriptionProduct";
-import MainImagesProduct from "./col-img-products/MainImagesProduct";
+import DescriptionProduct from "@/components/product/descriptions/DescriptionProduct";
+import MainImagesProduct from "@/components/product/gallery/MainImagesProduct";
 
 import imgProd1 from "@/assets/images/image-product-1.jpg";
 import imgProd2 from "@/assets/images/image-product-2.jpg";

@@ -10,11 +10,12 @@ const MainHeader = () => {
   const [navOpenClass, setNavOpenClass] = useState("hidden md:static md:mr-auto md:flex md:flex-row md:gap-4 md:p-0");
 
   const handleOpenMenu = () => {
-    setNavOpenClass("absolute z-10 top-0 left-0 flex h-full w-4/6 flex-col gap-y-5 bg-white p-8 font-bold");
+    setNavOpenClass(`absolute z-10 top-0 left-0 flex h-full w-4/6 flex-col gap-y-5 bg-white p-8 font-bold`);
   };
   const handleCloseMenu = () => {
     setNavOpenClass("hidden md:static md:mr-auto md:flex md:flex-row md:gap-4 md:p-0");
   };
+
   return (
     <>
       <header className="container mx-auto flex items-center gap-8 p-6 md:p-0 ">
@@ -24,7 +25,7 @@ const MainHeader = () => {
         <img src={logoSneakers} alt="Logo Sneakers" className="mr-auto mb-1 h-5 md:mr-0" />{" "}
         {/* mr-auto = Ocupa todo el espacio disponible hacia la derecha */}
         <nav className={navOpenClass}>
-          <button className="mb-12 md:hidden" onClick={handleCloseMenu}>
+          <button className="mb-12 w-5 md:hidden" onClick={handleCloseMenu}>
             <CloseIcon />
           </button>
           <NavLinkHeader linkName="Collection" />

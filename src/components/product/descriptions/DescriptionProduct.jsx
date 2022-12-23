@@ -33,12 +33,18 @@ const DescriptionProduct = () => {
         </div>
       </div>
       <section className="font-bold lg:flex lg:gap-3">
-        <div className="mb-3 flex w-full items-center justify-between rounded-lg bg-slate-100 py-4 px-5 lg:w-2/4">
-          <button onClick={disminuirCantidad}>
+        <div className="mb-3 flex w-full items-center justify-around rounded-lg bg-slate-100 md:justify-between lg:w-2/4 lg:py-0">
+          <button
+            onClick={disminuirCantidad}
+            className="flex h-12 w-full items-center justify-center active:rounded active:bg-black/5 md:w-1/2 lg:h-full lg:w-full "
+          >
             <MinusIcon />
           </button>
-          <span>{cantidadProd}</span>
-          <button onClick={aumentarCantidad}>
+          <span className="w-full text-center">{cantidadProd}</span>
+          <button
+            onClick={aumentarCantidad}
+            className="flex h-12 w-full items-center justify-center active:rounded active:bg-black/5 md:w-1/2 lg:h-full lg:w-full"
+          >
             <PlusIcon />
           </button>
         </div>

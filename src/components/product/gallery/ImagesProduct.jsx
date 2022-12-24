@@ -30,7 +30,7 @@ const ImagesProduct = ({ IMG_ARRAY = [], IMG_SMALL_ARRAY = [], isModalOpen = fal
         </button>
       )}
       <div onClick={handleOpenModal} className="relative col-span-4 md:cursor-pointer">
-        <img src={IMG_ARRAY[imgIndex]} alt="" className="aspect-[16/14] w-full md:mx-auto md:aspect-[16/14] md:rounded-lg " />
+        <img src={IMG_ARRAY[imgIndex]} alt="" className="aspect-[16/14] w-full md:mx-auto md:aspect-[16/14] md:rounded-lg" />
         <div ref={btnImgs} className="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-4 md:hidden">
           <button onClick={handleClickPrev} className=" flex h-9 w-9 items-center justify-center rounded-full bg-white">
             <PrevIcon />

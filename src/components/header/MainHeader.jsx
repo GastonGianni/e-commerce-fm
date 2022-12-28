@@ -12,7 +12,8 @@ const MainHeader = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
 
-  const MOBILE_MENU_OPEN_CLASS = "absolute top-0 left-0 z-10 flex h-full w-4/6 flex-col gap-y-5 bg-white p-8 font-bold";
+  const MOBILE_MENU_OPEN_CLASS =
+    "fixed top-0 left-0 z-20 flex h-full w-4/6 flex-col gap-y-5 p-8 font-bold bg-white border-r-2 border-slate-300 md:font-normal md:border-0";
 
   const handleOpenMenu = () => {
     setIsOpenMenu(true);
@@ -25,7 +26,8 @@ const MainHeader = () => {
 
   return (
     <>
-      <header className="container relative mx-auto flex items-center gap-8 p-6 md:p-0 ">
+      {isOpenMenu && <span className={`fixed z-10 h-full w-full bg-black opacity-75 md:hidden`}></span>}
+      <header className="container relative mx-auto flex items-center gap-8 p-6 md:p-0">
         <button className="md:hidden" onClick={handleOpenMenu}>
           <MenuIcon />
         </button>
@@ -48,8 +50,8 @@ const MainHeader = () => {
           <img src={imagenAvatar} alt="" className="w-10" />
 
           {isOpenCart && (
-            <section className="absolute top-[125%] left-0 z-10 w-full md:hidden">
-              <div className="mx-4 rounded-lg bg-white pb-7 shadow-lg">
+            <section className="absolute top-[125%] left-0 z-10 w-full md:top-[80%] md:left-[60%] md:w-3/6 lg:w-5/12 xl:left-[70%] xl:w-4/12 2xl:left-[78%] 2xl:w-3/12">
+              <div className="mx-4 rounded-lg bg-white pb-7 shadow-2xl">
                 <h4 className="p-5 font-bold">Cart</h4>
                 <hr />
                 <div className="grid grid-cols-[1fr_4fr_1fr] gap-4 p-5">

@@ -1,8 +1,8 @@
 import React from "react";
 import MinusIcon from "../../icons/MinusIcon";
 import PlusIcon from "../../icons/PlusIcon";
-import CartIcon from "../../icons/CartIcon";
 import { useState } from "react";
+import AddBtn from "./AddBtn";
 
 const DescriptionProduct = () => {
   const [cantidadProd, setCantidadProd] = useState(0);
@@ -49,10 +49,7 @@ const DescriptionProduct = () => {
           </button>
         </div>
         <div className="mb-3 lg:w-full">
-          <button className="flex w-full items-start justify-center gap-2 rounded-lg bg-orange-personal py-4 text-white shadow-lg hover:bg-orange-400 active:bg-orange-personal">
-            <CartIcon fill="#fff" />
-            <span>Add to cart</span>
-          </button>
+          <AddBtn />
         </div>
       </section>
     </section>

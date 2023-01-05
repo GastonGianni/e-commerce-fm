@@ -1,6 +1,8 @@
 import React from "react";
 import imgCartSmall from "@/assets/images/image-product-1-thumbnail.jpg";
 import DeleteIcon from "@/components/icons/DeleteIcon";
+import AddBtn from "../product/descriptions/AddBtn";
+import { createContext } from "react";
 
 const CartProductHeader = () => {
   return (
@@ -14,15 +16,15 @@ const CartProductHeader = () => {
             <h6 className="text-sm text-dark-grayish">Fall Limited Edition Sneakers</h6>
             <div className="flex gap-3">
               <span className="text-sm text-dark-grayish">$125.00 x 3</span>
-              <span className="text-sm font-bold">$375.00</span>
+              <span className="text-sm font-bold">$375</span>
             </div>
           </div>
           <button>
             <DeleteIcon className="hover:fill-orange-personal" />
           </button>
         </div>
-        <div className="mx-auto flex w-5/6 items-center justify-center">
-          <button className="w-full rounded-lg bg-orange-personal px-2 py-3 font-bold text-white shadow-lg hover:bg-orange-400">Checkout</button>
+        <div className="mx-auto flex w-11/12 items-center justify-center font-bold">
+          <AddBtn text={"Checkout"} icon={false} />
         </div>
       </div>
     </section>

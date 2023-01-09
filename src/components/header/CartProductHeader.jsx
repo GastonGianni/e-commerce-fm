@@ -2,7 +2,6 @@ import React from "react";
 import imgCartSmall from "@/assets/images/image-product-1-thumbnail.jpg";
 import DeleteIcon from "@/components/icons/DeleteIcon";
 import AddBtn from "../product/descriptions/AddBtn";
-import { createContext } from "react";
 
 const CartProductHeader = () => {
   return (

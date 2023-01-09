@@ -1,4 +1,3 @@
-import DescriptionProduct from "@/components/product/descriptions/DescriptionProduct";
 import MainImagesProduct from "@/components/product/gallery/MainImagesProduct";
 
 import imgProd1 from "@/assets/images/image-product-1.jpg";

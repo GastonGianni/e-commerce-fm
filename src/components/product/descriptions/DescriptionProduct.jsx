@@ -3,9 +3,12 @@ import MinusIcon from "../../icons/MinusIcon";
 import PlusIcon from "../../icons/PlusIcon";
 import { useState } from "react";
 import AddBtn from "./AddBtn";
+import { useDiscount } from "../../../hooks/useDiscount";
 
-const DescriptionProduct = () => {
+const DescriptionProduct = ({ objectProduct }) => {
   const [cantidadProd, setCantidadProd] = useState(0);
+
+  const { finalPrice } = useDiscount(objectProduct.price, objectProduct.discount);
 
   const aumentarCantidad = (e) => {
     cantidadProd >= 0 ? setCantidadProd(cantidadProd + 1) : null;
@@ -17,19 +20,18 @@ const DescriptionProduct = () => {
 
   return (
     <section className="container mx-auto px-4 md:max-w-[520px] md:p-0 lg:m-0 ">
-      <p className="mb-2 font-bold uppercase text-orange-personal">Sneaker Company</p>
-      <h1 className="mb-4 text-3xl font-bold">Fall Limited Edition Sneakers</h1>
-      <p className="mb-6 tracking-wide text-dark-grayish">
-        These low-profile sneakers are you perfect casual wear campanion. Featuring a durable rubber outer sole, thei'll withstand everything the
-        weather can offer.
-      </p>
+      <p className="mb-2 font-bold uppercase text-orange-personal">{objectProduct.subtitle}</p>
+      <h1 className="mb-4 text-3xl font-bold">{objectProduct.title}</h1>
+      <p className="mb-6 tracking-wide text-dark-grayish">{objectProduct.description}</p>
       <div className="mb-4 flex lg:flex-col">
         <div className="mr-auto flex items-center justify-center gap-4">
-          <span className="text-2xl font-bold">$125.00</span>
-          <span className="w-10 rounded-md bg-orange-200 text-center font-semibold text-orange-personal opacity-75">50%</span>
+          <span className="text-2xl font-bold">${finalPrice.toFixed(2)}</span>
+          <span className="w-10 rounded-md bg-orange-200 text-center font-semibold text-orange-personal opacity-75">
+            {objectProduct.discount * 100}%
+          </span>
         </div>
         <div className="flex items-center justify-center lg:justify-start">
-          <span className=" text-grayish-blue line-through">$250</span>
+          <span className=" text-grayish-blue line-through">${objectProduct.price.toFixed(2)}</span>
         </div>
       </div>
       <section className="font-bold lg:flex lg:gap-3">

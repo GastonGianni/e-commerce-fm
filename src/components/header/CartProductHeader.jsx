@@ -5,7 +5,7 @@ import AddBtn from "../product/descriptions/AddBtn";
 
 const CartProductHeader = () => {
   return (
-    <section className="absolute top-[125%] left-0 z-10 w-full md:top-[80%] md:left-[60%] md:w-3/6 lg:w-5/12 xl:left-[70%] xl:w-4/12 2xl:left-[75%] 2xl:w-3/12">
+    <section className="absolute top-[125%] left-0 z-10 w-full md:left-full md:max-w-sm md:-translate-x-full md:-translate-y-4">
       <div className="mx-4 rounded-lg bg-white pb-7 shadow-2xl">
         <h4 className="p-5 font-bold">Cart</h4>
         <hr />

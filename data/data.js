@@ -15,7 +15,7 @@ const objectProduct = {
     "These low-profile sneakers are you perfect casual wear campanion. Featuring a durable rubber outer sole, thei'll withstand everything the weather can offer.",
   subtitle: "Sneaker company",
   price: 250,
-  discount: 0.5,
+  discount: 0.3,
   imagesMain: [imgProd1, imgProd2, imgProd3, imgProd4],
   imagesSmall: [
     { url: imgProdSmall_1, id: 0 },

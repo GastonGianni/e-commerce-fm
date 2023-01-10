@@ -4,25 +4,34 @@ import PlusIcon from "../../icons/PlusIcon";
 import { useState } from "react";
 import AddBtn from "./AddBtn";
 import { useDiscount } from "../../../hooks/useDiscount";
+import { useCartContext } from "../../../context/CartContext";
 
 const DescriptionProduct = ({ objectProduct }) => {
-  const [cantidadProd, setCantidadProd] = useState(0);
+  const { productQuant, aumentarCantidad, disminuirCantidad } =
+    useCartContext();
 
-  const { finalPrice } = useDiscount(objectProduct.price, objectProduct.discount);
+  const { finalPrice } = useDiscount(
+    objectProduct.price,
+    objectProduct.discount
+  );
 
-  const aumentarCantidad = (e) => {
+  const handleAumentarCantidad = (e) => {
     cantidadProd >= 0 ? setCantidadProd(cantidadProd + 1) : null;
   };
 
-  const disminuirCantidad = (e) => {
+  const handleDisminuirCantidad = (e) => {
     cantidadProd > 0 ? setCantidadProd(cantidadProd - 1) : null;
   };
 
   return (
     <section className="container mx-auto px-4 md:max-w-[520px] md:p-0 lg:m-0 ">
-      <p className="mb-2 font-bold uppercase text-orange-personal">{objectProduct.subtitle}</p>
+      <p className="mb-2 font-bold uppercase text-orange-personal">
+        {objectProduct.subtitle}
+      </p>
       <h1 className="mb-4 text-3xl font-bold">{objectProduct.title}</h1>
-      <p className="mb-6 tracking-wide text-dark-grayish">{objectProduct.description}</p>
+      <p className="mb-6 tracking-wide text-dark-grayish">
+        {objectProduct.description}
+      </p>
       <div className="mb-4 flex lg:flex-col">
         <div className="mr-auto flex items-center justify-center gap-4">
           <span className="text-2xl font-bold">${finalPrice.toFixed(2)}</span>
@@ -31,7 +40,9 @@ const DescriptionProduct = ({ objectProduct }) => {
           </span>
         </div>
         <div className="flex items-center justify-center lg:justify-start">
-          <span className=" text-grayish-blue line-through">${objectProduct.price.toFixed(2)}</span>
+          <span className=" text-grayish-blue line-through">
+            ${objectProduct.price.toFixed(2)}
+          </span>
         </div>
       </div>
       <section className="font-bold lg:flex lg:gap-3">

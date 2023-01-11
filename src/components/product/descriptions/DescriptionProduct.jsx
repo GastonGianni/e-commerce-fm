@@ -2,11 +2,10 @@ import React from "react";
 import MinusIcon from "../../icons/MinusIcon";
 import PlusIcon from "../../icons/PlusIcon";
 import AddBtn from "./AddBtn";
-import { useDiscount } from "../../../hooks/useDiscount";
 import { useCartContext } from "../../../context/CartContext";
 
 const DescriptionProduct = () => {
-  const { product, productQuant, aumentarCantidad, disminuirCantidad, addToCart, finalPrice } = useCartContext();
+  const { product, productQuant, aumentarCantidad, disminuirCantidad, addToCart, finalPriceDiscount } = useCartContext();
 
   const handleAumentarCantidad = () => {
     aumentarCantidad();
@@ -27,7 +26,7 @@ const DescriptionProduct = () => {
       <p className="mb-6 tracking-wide text-dark-grayish">{product.description}</p>
       <div className="mb-4 flex lg:flex-col">
         <div className="mr-auto flex items-center justify-center gap-4">
-          <span className="text-2xl font-bold">${finalPrice}</span>
+          <span className="text-2xl font-bold">${finalPriceDiscount}</span>
           <span className="w-10 rounded-md bg-orange-200 text-center font-semibold text-orange-personal opacity-75">{product.discount * 100}%</span>
         </div>
         <div className="flex items-center justify-center lg:justify-start">

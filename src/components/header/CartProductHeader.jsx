@@ -5,7 +5,8 @@ import CloseIcon from "../icons/CloseIcon";
 import { useCartContext } from "../../context/CartContext";
 
 const CartProductHeader = () => {
-  const { product, finalPrice, isCartEmpty, deleteItemCart, toggleCart, resetProductQuant, finalProductQuant, finalProductPrice } = useCartContext();
+  const { product, finalPriceDiscount, isCartEmpty, deleteItemCart, toggleCart, resetProductQuant, finalProductQuant, finalProductPrice } =
+    useCartContext();
 
   const handleDeleteItemCart = () => {
     deleteItemCart();
@@ -30,7 +31,7 @@ const CartProductHeader = () => {
                 <h6 className="text-sm text-dark-grayish">{product.title}</h6>
                 <div className="flex gap-3">
                   <span className="text-sm text-dark-grayish">
-                    {finalPrice} x {finalProductQuant}
+                    {finalPriceDiscount} x {finalProductQuant}
                   </span>
                   <span className="text-sm font-bold">${finalProductPrice}</span>
                 </div>

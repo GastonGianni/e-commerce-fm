@@ -12,23 +12,32 @@ const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 const CartContextProvider = ({ children }) => {
+  //Cantidad de productos dinamica
   const [productQuant, setProductQuant] = useState(0);
 
+  // Btn add to cart
   const [isOnCart, setIsOnCart] = useState(false);
 
+  // Carrito vacio
   const [isCartEmpty, setIsCartEmpty] = useState(true);
 
+  // Menu abierto (mobile)
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
+  // Cart abierto
   const [isOpenCart, setIsOpenCart] = useState(false);
 
+  // Data
   const product = objectProduct;
 
+  // Cantidad de productos luego de add to cart
   const finalProductQuant = useUpdateCart(isOnCart, productQuant);
 
-  const { finalPrice } = useDiscount(product.price, product.discount);
+  // Precio del producto con descuento aplicado
+  const { finalPriceDiscount } = useDiscount(product.price, product.discount);
 
-  const finalProductPrice = useFinalPrice(finalPrice, finalProductQuant);
+  // Precio del producto multiplicado por la cantidad final
+  const finalProductPrice = useFinalPrice(finalPriceDiscount, finalProductQuant);
 
   const addToCart = () => {
     setIsOnCart(!isOnCart);
@@ -68,7 +77,7 @@ const CartContextProvider = ({ children }) => {
         addToCart,
         isOnCart,
         product,
-        finalPrice,
+        finalPriceDiscount,
         isCartEmpty,
         deleteItemCart,
         isOpenMenu,

@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
-import objectProduct from "../../data/data";
 import { useDiscount } from "../hooks/useDiscount";
+import { useUpdateCart } from "../hooks/useUpdateCart";
+import { useFinalPrice } from "../hooks/useFinalPrice";
+
+import objectProduct from "../../data/data";
 
 const CartContext = createContext();
 
@@ -15,9 +18,17 @@ const CartContextProvider = ({ children }) => {
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
 
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const [isOpenCart, setIsOpenCart] = useState(false);
+
   const product = objectProduct;
 
+  const finalProductQuant = useUpdateCart(isOnCart, productQuant);
+
   const { finalPrice } = useDiscount(product.price, product.discount);
+
+  const finalProductPrice = useFinalPrice(finalPrice, finalProductQuant);
 
   const addToCart = () => {
     setIsOnCart(!isOnCart);
@@ -40,6 +51,14 @@ const CartContextProvider = ({ children }) => {
     productQuant > 0 ? setProductQuant(productQuant - 1) : null;
   };
 
+  const resetProductQuant = () => {
+    setProductQuant(0);
+  };
+
+  const toggleMenu = () => setIsOpenMenu(!isOpenMenu);
+
+  const toggleCart = () => setIsOpenCart(!isOpenCart);
+
   return (
     <CartContext.Provider
       value={{
@@ -52,6 +71,13 @@ const CartContextProvider = ({ children }) => {
         finalPrice,
         isCartEmpty,
         deleteItemCart,
+        isOpenMenu,
+        isOpenCart,
+        toggleMenu,
+        toggleCart,
+        finalProductQuant,
+        resetProductQuant,
+        finalProductPrice,
       }}
     >
       {children}

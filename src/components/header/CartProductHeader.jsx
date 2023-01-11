@@ -1,24 +1,26 @@
 import React from "react";
 import DeleteIcon from "@/components/icons/DeleteIcon";
 import AddBtn from "../product/descriptions/AddBtn";
+import CloseIcon from "../icons/CloseIcon";
 import { useCartContext } from "../../context/CartContext";
-import { useUpdateCart } from "../../hooks/useUpdateCart";
-import { useFinalPrice } from "../../hooks/useFinalPrice";
 
 const CartProductHeader = () => {
-  const { productQuant, isOnCart, product, finalPrice, isCartEmpty, deleteItemCart } = useCartContext();
+  const { product, finalPrice, isCartEmpty, deleteItemCart, toggleCart, resetProductQuant, finalProductQuant, finalProductPrice } = useCartContext();
 
   const handleDeleteItemCart = () => {
     deleteItemCart();
+    resetProductQuant();
   };
 
-  const finalProductQuant = useUpdateCart(isOnCart, productQuant);
-  const finalProductPrice = useFinalPrice(finalPrice, finalProductQuant);
-
   return (
-    <section className="absolute top-[125%] left-0 z-10 w-full md:left-full md:max-w-sm md:-translate-x-full md:-translate-y-4">
+    <section className="absolute top-[125%] left-0 z-20 w-full md:left-full md:max-w-sm md:-translate-x-full md:-translate-y-4">
       <div className="mx-4 rounded-lg bg-white shadow-2xl">
-        <h4 className="p-5 font-bold">Cart</h4>
+        <div className="flex justify-between">
+          <h4 className="p-5 font-bold">Cart</h4>
+          <button className="-translate-x-5">
+            <CloseIcon onClick={toggleCart} fill="gray" />
+          </button>
+        </div>
         <hr />
         {!isCartEmpty && finalProductQuant > 0 ? (
           <>

@@ -10,6 +10,8 @@ import { useCartContext } from "../../context/CartContext";
 const MainHeader = () => {
   const { isOpenCart, isOpenMenu, toggleCart, toggleMenu, finalProductQuant } = useCartContext();
 
+  const links = ["Home", "Collection", "About", "Contact"];
+
   const handleToggleMenu = () => {
     toggleMenu();
   };
@@ -32,11 +34,9 @@ const MainHeader = () => {
           <button className="mb-12 w-5 md:hidden" onClick={handleToggleMenu}>
             <CloseIcon />
           </button>
-          <NavLinkHeader linkName="Collection" />
-          <NavLinkHeader linkName="Men" />
-          <NavLinkHeader linkName="Women" />
-          <NavLinkHeader linkName="About" />
-          <NavLinkHeader linkName="Contact" />
+          {links.map((link) => (
+            <NavLinkHeader key={link} linkName={link} path={`/${link}`} />
+          ))}
         </nav>
         <div className="flex gap-4">
           <button className="relative" onClick={handleToggleCart}>

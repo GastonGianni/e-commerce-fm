@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import CardProduct from "./CardProduct";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,18 +34,9 @@ const Home = () => {
           </button>
         </div>
       ) : (
-        <div className="mx-auto my-4 flex w-3/4  flex-wrap gap-6 ">
+        <div className="mx-auto my-4 flex w-3/4 flex-wrap gap-6 ">
           {productArray.map((product) => (
-            <div
-              key={product.id}
-              className="mx-auto flex max-h-[320px] min-h-[320px] min-w-[200px] max-w-[200px] cursor-pointer flex-col justify-center border transition-all hover:scale-105 hover:shadow-lg md:w-2/12"
-            >
-              <img src={product.image} alt="" className="mb-2 max-h-[180px] min-h-[180px] object-contain" />
-              <hr />
-              <div className="text-sm ">{product.title}</div>
-
-              <div className="mt-auto mb-1 text-lg font-bold text-orange-400">${product.price}</div>
-            </div>
+            <CardProduct product={product} key={product.id} />
           ))}
         </div>
       )}

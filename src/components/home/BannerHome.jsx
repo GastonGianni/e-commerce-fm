@@ -27,13 +27,13 @@ export default function BannerHome() {
         <div className="absolute top-1/2 left-0 flex w-full -translate-y-full justify-between">
           <button
             onClick={handleClicPrev}
-            className="hidden h-8 w-8 items-center justify-center rounded-full bg-slate-600 opacity-75 shadow-lg md:flex"
+            className="ml-3 hidden h-8 w-8 items-center justify-center rounded-full bg-slate-600 opacity-75 shadow-lg md:flex"
           >
             <PrevIcon stroke="white" />
           </button>
           <button
             onClick={handleClickNext}
-            className="hidden h-9 w-9 items-center justify-center rounded-full bg-slate-600 opacity-75 shadow-lg md:flex"
+            className="mr-3 hidden h-9 w-9 items-center justify-center rounded-full bg-slate-600 opacity-75 shadow-lg md:flex"
           >
             <NextIcon stroke="white" />
           </button>
@@ -42,7 +42,9 @@ export default function BannerHome() {
           {bannerArray.map((img) => (
             <span
               key={img.url}
-              className={`h-2 w-2 rounded-full bg-white ${img.url === bannerArray[bannerArrayIndex].url && "bg-slate-600"} `}
+              className={`h-[6px] w-[6px] rounded-full border border-slate-500 bg-white ${
+                img.url === bannerArray[bannerArrayIndex].url && "scale-150 bg-slate-600 transition-all"
+              } `}
             ></span>
           ))}
         </div>

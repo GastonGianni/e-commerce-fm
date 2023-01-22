@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import MainFooter from "../footer/MainFooter";
 import BannerHome from "./BannerHome";
 import CardProduct from "./CardProduct";
 import LoadingSpinner from "./LoadingSpinner";
@@ -24,11 +25,12 @@ const Home = () => {
       ) : (
         <div>
           <BannerHome />
-          <div className="mx-auto my-4 flex w-full flex-wrap gap-6 md:w-3/4 ">
+          <div className="mx-auto grid w-full grid-cols-2 gap-1 md:my-4 md:w-3/4 md:gap-6  lg:grid-cols-3 ">
             {productArray.map((product) => (
               <CardProduct product={product} key={product.id} />
             ))}
           </div>
+          <MainFooter />
         </div>
       )}
     </>

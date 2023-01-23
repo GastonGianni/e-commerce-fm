@@ -30,7 +30,7 @@ const MainHeader = () => {
         <button className="md:hidden" onClick={handleToggleMenu}>
           <MenuIcon />
         </button>
-        <Link className="mr-auto min-w-[138px] md:mr-0">
+        <Link to={"/"} className="mr-auto min-w-[138px] md:mr-0">
           <img src={logoSneakers} alt="Logo Sneakers" className="mb-1 h-5" />
         </Link>
         <nav className={`md:static md:mr-auto md:flex md:flex-row md:gap-4 md:p-0 ${isOpenMenu ? MOBILE_MENU_OPEN_CLASS : "hidden"}`}>

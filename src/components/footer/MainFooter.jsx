@@ -2,7 +2,7 @@ import React from "react";
 
 const MainFooter = () => {
   return (
-    <div className="mx-4 flex flex-wrap justify-evenly gap-1 border-t md:h-24 md:flex-row md:gap-0">
+    <div className="mx-4 flex flex-wrap justify-evenly gap-4 border-t md:h-24 md:flex-row md:gap-0">
       <p className="mt-3 cursor-pointer text-sm text-slate-700">Trabaja con nosotros</p>
       <p className="mt-3 cursor-pointer text-sm text-slate-700">Términos y condiciones</p>
       <p className="mt-3 cursor-pointer text-sm text-slate-700">Accesibilidad</p>

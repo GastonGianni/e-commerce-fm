@@ -30,7 +30,6 @@ export default function BannerHome() {
     });
   };
 
-  console.log(bannerArrayIndex);
   useEffect(() => {
     const interval = setInterval(() => {
       handleClickNext();
@@ -41,7 +40,7 @@ export default function BannerHome() {
   return (
     <div>
       <div className="relative min-h-[274px] w-full border">
-        <img src={bannerArray[bannerArrayIndex].url} alt="" className="hidden md:block " />
+        <img src={bannerArray[bannerArrayIndex].url} alt="" className="hidden duration-300 md:block" />
         <img src={bannerArrayMobile[bannerArrayIndex].url} alt="" className="block md:hidden" />
         <div className="absolute top-1/2 left-0 flex w-full -translate-y-full justify-between">
           <button

@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Categories = ({ product }) => {
-  const duplicateCategories = [];
-  product.map((prod) => duplicateCategories.push(prod.category));
-  const categoriesArray = [...new Set(duplicateCategories)];
+const Categories = () => {
+  const [categoriesArray, setCategoriesArray] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetch("https://fakestoreapi.com/products/categories");
+        const categories = await data.json();
+        setCategoriesArray(categories);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
-    <div className="mx-auto mt-4 flex w-full flex-col items-center justify-evenly gap-4 md:w-3/4 md:flex-row">
+    <div className="mx-auto mt-4 mb-3 flex w-full flex-col items-center justify-evenly gap-4 md:w-3/4 md:flex-row">
       {categoriesArray.map((category) => (
         <Link
           key={category}

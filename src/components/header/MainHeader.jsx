@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const MainHeader = () => {
   const { isOpenCart, isOpenMenu, toggleCart, toggleMenu, finalProductQuant } = useCartContext();
 
-  const links = ["Collection", "About", "Contact", "Product"];
+  const links = ["Categories", "Product", "Contact", "About"];
 
   const handleToggleMenu = () => {
     toggleMenu();

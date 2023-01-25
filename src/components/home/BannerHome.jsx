@@ -39,8 +39,8 @@ export default function BannerHome() {
 
   return (
     <div>
-      <div className="relative min-h-[274px] w-full border">
-        <img src={bannerArray[bannerArrayIndex].url} alt="" className="hidden duration-300 md:block" />
+      <div className="relative m-0 w-full border-b-4 p-0">
+        <img src={bannerArray[bannerArrayIndex].url} alt="" className=" hidden duration-300 md:block" />
         <img src={bannerArrayMobile[bannerArrayIndex].url} alt="" className="block md:hidden" />
         <div className="absolute top-1/2 left-0 flex w-full -translate-y-full justify-between">
           <button

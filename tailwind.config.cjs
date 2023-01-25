@@ -4,6 +4,14 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      xxs: "10px",
+      xs: "408px",
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
+    },
     extend: {
       fontFamily: {
         sans: ["Kumbh Sans", ...defaultTheme.fontFamily.sans],

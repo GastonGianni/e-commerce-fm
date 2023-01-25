@@ -15,6 +15,7 @@ const Home = () => {
         const data = await fetch("https://fakestoreapi.com/products");
         const products = await data.json();
         setIsLoading(false);
+        products.sort((a, b) => b.rating.rate - a.rating.rate);
         setProductArray(products);
       } catch (error) {
         console.log(error);
@@ -26,13 +27,19 @@ const Home = () => {
   return (
     <>
       {isLoading ? (
-        <LoadingSpinner />
+        <div className="h-screen">
+          <LoadingSpinner />
+        </div>
       ) : (
         <div className="">
           <BannerHome />
 
           <Categories />
-          <div className="mx-auto my-3 grid w-[380px] grid-cols-2 gap-2 sm:w-[530px] sm:grid-cols-3 md:my-4 md:w-3/4 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          <div
+            className={
+              "2xl:grid-cols-5 mx-auto my-3 grid w-[380px] grid-cols-2 gap-2 sm:w-[530px] sm:grid-cols-3 md:my-4 md:w-3/4 md:gap-6 lg:grid-cols-3 xl:grid-cols-4"
+            }
+          >
             {productArray.map((product) => (
               <CardProduct product={product} key={product.id} />
             ))}

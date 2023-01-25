@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import MainFooter from "../footer/MainFooter";
 import BannerHome from "./BannerHome";
 import CardProduct from "./CardProduct";
 import Categories from "./Categories";
@@ -29,7 +28,7 @@ const Home = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <div>
+        <div className="">
           <BannerHome />
 
           <Categories />
@@ -38,7 +37,6 @@ const Home = () => {
               <CardProduct product={product} key={product.id} />
             ))}
           </div>
-          <MainFooter />
         </div>
       )}
     </>

@@ -7,11 +7,12 @@ import NavLinkHeader from "@/components/header/NavLinkHeader";
 import CartProductHeader from "@/components/header/CartProductHeader";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import SearchHeader from "./SearchHeader";
 
 const MainHeader = () => {
   const { isOpenCart, isOpenMenu, toggleCart, toggleMenu, finalProductQuant } = useCartContext();
 
-  const links = ["Categories", "Product", "Contact", "About"];
+  const links = ["Home", "Sale", "Browsing History", "Sell", "Contact", "About"];
 
   const handleToggleMenu = () => {
     toggleMenu();
@@ -41,6 +42,7 @@ const MainHeader = () => {
             <NavLinkHeader key={link} linkName={link} path={`/${link}`} />
           ))}
         </nav>
+        {/* <SearchHeader /> */}
         <div className="flex gap-4">
           <button className="relative" onClick={handleToggleCart}>
             <CartIcon />

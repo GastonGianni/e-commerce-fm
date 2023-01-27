@@ -35,7 +35,7 @@ const Home = () => {
           <BannerHome />
 
           <Categories />
-          <div className={"mx-auto my-4 grid w-3/4 grid-cols-autofit gap-4"}>
+          <div className={"my-4 mx-auto grid w-3/4 grid-cols-autofit place-items-center gap-4"}>
             {productArray.map((product) => (
               <CardProduct product={product} key={product.id} />
             ))}

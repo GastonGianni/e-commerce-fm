@@ -27,7 +27,7 @@ const MainHeader = () => {
   return (
     <>
       {isOpenMenu && <span className={`fixed z-10 h-full w-full bg-black opacity-75 md:hidden`}></span>}
-      <header className="relative flex w-full items-center gap-8 p-6 md:container md:mx-auto md:p-0">
+      <header className="relative flex w-full min-w-[262px] items-center gap-8 p-6 md:container md:mx-auto md:p-0">
         <button className="md:hidden" onClick={handleToggleMenu}>
           <MenuIcon />
         </button>

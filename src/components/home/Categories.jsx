@@ -6,7 +6,7 @@ const Categories = () => {
   const categoriesArray = getCategories();
 
   return (
-    <div className="mx-auto mt-4 mb-3 flex w-full flex-col items-center justify-evenly gap-4 md:w-3/4 md:flex-row">
+    <div className="mx-auto mt-4 mb-3 flex w-full min-w-[262px] flex-col items-center justify-evenly gap-4 md:w-3/4 md:flex-row">
       {categoriesArray.map((category) => (
         <div
           key={category}

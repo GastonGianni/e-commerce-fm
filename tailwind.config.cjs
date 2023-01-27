@@ -13,6 +13,9 @@ module.exports = {
       xl: "1440px",
     },
     extend: {
+      gridTemplateColumns: {
+        autofit: "repeat(auto-fit,minmax(250px,1fr))",
+      },
       fontFamily: {
         sans: ["Kumbh Sans", ...defaultTheme.fontFamily.sans],
       },

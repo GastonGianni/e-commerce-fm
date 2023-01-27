@@ -47,7 +47,7 @@ const ImagesProduct = ({ IMG_ARRAY = [], IMG_SMALL_ARRAY = [], isModalOpen = fal
           <span
             className={`absolute top-0 h-full w-full hover:bg-[rgba(255,255,255,0.4)] ${
               i === imgIndex && "border-4 border-orange-personal bg-[rgba(255,255,255,0.4)]"
-            }    `}
+            }`}
           ></span>
         </div>
       ))}
